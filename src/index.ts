@@ -245,7 +245,7 @@ export const deserialize = <T>(json: any, type: new (...params: Array<any>) => T
         return new type(json);
     }
 
-    const instance: any = new type();
+    const instance: any = new type({});
     const instanceName: string = instance.constructor.name;
     const apiMapInstanceName = `${apiMap}${instanceName}`;
     const hasMap = Reflect.hasMetadata(apiMapInstanceName, instance);
